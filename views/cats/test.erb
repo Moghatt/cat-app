@@ -1,9 +1,5 @@
-
-
-
-
 <% if logged_in? %>
-<h1>Planets</h1>
+
 
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
@@ -29,35 +25,50 @@
   </div>
 </nav>
 
+<h1>Welcome to cat dating web-app <%= current_user['first_name'] %></h1>
 
-  <h2>Welcome to Food Truck <%= current_user['first_name'] %></h2>
+
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      
+      
+    </div>
+    <div class="col-6">
+      Column
+    </div>
+
+  </div>
+</div>
+  
  
   <section class="controls">
 
-    <a href="/planets/new">Add planet</a>
+    <a href="/cats/new">Add cat</a>
   </section>
   
 
-  <section class="planets">
-    <% planets.each do |planet| %>
-      <section class="planet">
-        <header>
-          <h2><%= planet['name'] %></h2>
-          <section class="controls">
-          <a href="/planets/<%= planet['id'] %>/edit">Edit</a>
+  <section class="cats">
+    <% cats.each do |cat| %>
+      <section class="cat">
 
-          <form action="/planets/<%= planet['id'] %>" method="POST">
+        <header>
+          <h2><%= cat['name'] %></h2>
+          <section class="controls">
+          <a href="/cats/<%= cat['id'] %>/edit">Edit</a>
+
+          <form action="/cats/<%= cat['id'] %>" method="POST">
             <input type="hidden" name="_method" value="delete">
             <button>Delete</button>
           </form>
           </section>
         </header>
         
-        <img src="<%= planet['image_url'] %>" alt="">
-        <h2><%= planet['diameter'] %></h2>
-        <h2><%= planet['distance'] %></h2>
-        <h2><%= planet['mass'] %></h2>
-        <h2><%= planet['moon_count'] %></h2>
+        <img src="<%= cat['image_url'] %>" alt="">
+        <h2><%= cat['gender'] %></h2>
+        <h2><%= cat['age'] %></h2>
+
         
       </section>
     <% end %>
@@ -87,4 +98,3 @@
 </nav> %>
 
 <% end %>
-

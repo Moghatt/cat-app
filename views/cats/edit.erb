@@ -1,0 +1,18 @@
+<h1>Edit Profile</h1>
+<form action="/cats/<%= cat['id'] %>" method="POST">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="">Name: </label>
+  <input type="text" name="name" value="<%= cat['name'] %>">
+
+  <label for="">Image URL: </label>
+  <input type="text" name="image_url" value="<%= cat['image_url'] %>">
+
+    <label for="">gender: </label>
+  <input type="text" name="gender" value="<%= cat['gender'] %>">
+
+    <label for="">age:</label>
+  <input type="text" name="age" value="<%= cat['age'] %>">
+
+  <button>Update Profile</button>
+</form>

@@ -14,6 +14,8 @@ post '/sessions' do
     session['user_id'] = user['id']
     
     redirect '/'
+  else
+    "Wrong Password or Email Try again please"
   end
 end
 
