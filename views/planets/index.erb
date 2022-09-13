@@ -1,0 +1,90 @@
+
+
+
+
+<% if logged_in? %>
+<h1>Planets</h1>
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        </li>
+      </ul>
+          <form class="d-flex"  action="/sessions" method="POST">
+      <input type="hidden" name = "_method" value="delete">
+      <button>Logout</button>
+    </form>
+    </div>
+  </div>
+</nav>
+
+
+  <h2>Welcome to Food Truck <%= current_user['first_name'] %></h2>
+ 
+  <section class="controls">
+
+    <a href="/planets/new">Add planet</a>
+  </section>
+  
+
+  <section class="planets">
+    <% planets.each do |planet| %>
+      <section class="planet">
+        <header>
+          <h2><%= planet['name'] %></h2>
+          <section class="controls">
+          <a href="/planets/<%= planet['id'] %>/edit">Edit</a>
+
+          <form action="/planets/<%= planet['id'] %>" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <button>Delete</button>
+          </form>
+          </section>
+        </header>
+        
+        <img src="<%= planet['image_url'] %>" alt="">
+        <h2><%= planet['diameter'] %></h2>
+        <h2><%= planet['distance'] %></h2>
+        <h2><%= planet['mass'] %></h2>
+        <h2><%= planet['moon_count'] %></h2>
+        
+      </section>
+    <% end %>
+  </section>
+<% else %>
+<%# <div class="cen">
+ <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+  </ul>
+  </div> %>
+<div class="cen">
+   <a class= "aa" href="/sessions/new">Login</a>
+  <a class= "aa"  href="/users/new">Sign up</a>
+</div>
+
+
+<%# <nav class="nav nav-pills flex-column flex-sm-row">
+  <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Active</a>
+    <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Active</a>
+
+ 
+</nav> %>
+
+<% end %>
+
