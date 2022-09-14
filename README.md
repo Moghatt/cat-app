@@ -5,31 +5,24 @@ The briefest description of my cool project and why you should all use it.
 
 ## :page_facing_up: About
 - How to use my awesome project.
-- Download instructions (if relevant):
 ```
-if your Cat is looking for solemate here is awsome app to find one sign up is very easy process
+If your Cat is looking for solemate here is awsome app to find one sign up is very easy, So lete join us.
+You have ability to search based on age and gender, and also you can add your cat to most cutest app.
 ```
-- Add in-app screenshots.
 
 ## :pencil2: Planning & Problem Solving
-- Talk about approach to the problem.
-- Add screenshots/drawings of doodles/plans during the planning phase.
-- Flow charts of app logic.
-![Wireframing](https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+It was my first CRUD project. first I started working about idea to have fun part and also have parctical use as well. Second I strated Wireframing my page and take note how to approach for the next step.
+The first problem I had was with css so I decided to make functionalty works after that if I had time come back and do css. Second problem I had encountered was after user login to website they only can edit and delete their own database, the way I approach to solve it was to use session to make that happen.
 
 ## :rocket: Cool tech
-- Programming languages
-- Libraries
-- Animations
-- Anything else you'd be proud to show your parents
+- HTML
+- CSS
+- RUBY
+- Sinatra
 
 ## :scream: Bugs to fix :poop:
-- Anything a little broken
-- Anything a LOT broken
-- Buttons to not click too many times (cause its broken :unamused:)
+always is somthing wrong with css
 
-## :sob: Lessons learnt
-What I would do differently if I could wind back the clock...
 
 ## :white_check_mark: Future features
-Cool things I would add if I can keep working on this
+make search feature more specific and add some personality and location
