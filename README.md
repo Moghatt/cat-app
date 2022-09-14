@@ -6,7 +6,8 @@ The briefest description of my cool project and why you should all use it.
 ## :page_facing_up: About
 - How to use my awesome project.
 - Download instructions (if relevant):
-```if your Cat is looking for solemate here is awsome app to find one sign up is very easy process
+```
+if your Cat is looking for solemate here is awsome app to find one sign up is very easy process
 ```
 - Add in-app screenshots.
 
