@@ -2,7 +2,7 @@
 
 The briefest description of my cool project and why you should all use it.
 
-## :computer: [](https://thawing-savannah-09317.herokuapp.com/) to see my live project!
+## :computer: [Click here](https://thawing-savannah-09317.herokuapp.com/) to see my live project!
 
 ## :page_facing_up: About
 
