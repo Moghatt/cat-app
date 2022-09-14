@@ -19,7 +19,13 @@ def delete_cat(id)
 end
 
 def search_cat(age, gender)
-  run_sql("SELECT * FROM cats WHERE age = $1 AND gender = $2",[age, gender])[0]
+  # run_sql("SELECT * FROM cats WHERE age = $1 AND gender = $2",[age, gender])[0]
+  search_Cati = run_sql("SELECT * FROM cats WHERE age = $1 AND gender = $2",[age, gender])
+  if search_Cati.to_a.count > 0
+    run_sql("SELECT * FROM cats WHERE age = $1 AND gender = $2",[age, gender])[0]
+  else
+    nil
+  end
 end 
 
 def profile_cat(owner_id)

@@ -1,5 +1,20 @@
-<h1>Edit Profile</h1>
-<form action="/cats/<%= cat['id'] %>" method="POST">
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Cati</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/cats/profile">Profile</a>
+        </li>
+      </ul>
+    <form class="d-flex"  action="/sessions" method="POST">
+      <input type="hidden" name = "_method" value="delete">
+      <button>Logout</button>
+    </form>
+  </div>
+</nav>
+<section class="add-cat">
+<h1 class ="h1-add">Edit Profile</h1>
+  <form action="/cats/<%= cat['id'] %>" method="POST">
   <input type="hidden" name="_method" value="put">
 
   <label for="">Name: </label>
@@ -14,5 +29,6 @@
     <label for="">age:</label>
   <input type="text" name="age" value="<%= cat['age'] %>">
 
-  <button>Update Profile</button>
-</form>
+  <button class="btn btn-primary">Update Profile</button>
+  </form>
+</section>

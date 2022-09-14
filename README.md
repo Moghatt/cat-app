@@ -31,4 +31,5 @@ always is somthing wrong with css
 
 ## :white_check_mark: Future features
 
-make search feature more specific and add some personality and location
+make search feature more specific and add some personality and location.
+make it more responsive to mobile compatibility.

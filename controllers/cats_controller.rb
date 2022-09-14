@@ -54,8 +54,8 @@ delete '/cats/:id' do
 end
 
 get '/cats/search' do
-  gender = params['gender']
-  age = params['age']
+  gender = params['gender'].downcase
+  age = params['age'].downcase
 
   search_cat = search_cat(age, gender)
   erb :'cats/search', locals: {

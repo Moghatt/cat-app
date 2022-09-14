@@ -1,10 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Cati</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/profile/new">Profile</a>
@@ -14,17 +10,17 @@
       <input type="hidden" name = "_method" value="delete">
       <button>Logout</button>
     </form>
-    </div>
   </div>
 </nav>
 
 <section class="cat">
+<% if search_cat %>
         <h2 class="search-cat"><%= search_cat['name'] %></h2>
-
-           <%# <%= if current_user['id']== %> 
-        
         <img  id="image-search" src="<%= search_cat['image_url'] %>" alt="">
         <h2 class="h2-img" style="background-color:#fff;" #cccccc;><span class="spa">gender : </span><%= search_cat['gender'] %></h2>
         <h2 class="h2-img" style="background-color:#fff;"><span class="spa">age : </span><%= search_cat['age'] %></h2>
         <h3 class="h2-img" style="background-color:#fff;"><%= search_cat['name'] %> might be your solemate</h3>
+  <%else%>
+        <p class ="text-muted display-5">Sorry, Match not found try again with new age</p>
+  <%end%>
 </section>
