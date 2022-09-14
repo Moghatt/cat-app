@@ -99,6 +99,7 @@ body {
 .index-main{
     display: grid;
     grid-template-columns: 2fr 5fr;
+    background-color: rgb(205, 231, 215);
 }
 
 .side-bar{
@@ -110,12 +111,26 @@ body {
     color: rgb(212, 81, 81);
     padding: 8px;
     margin: .8rem;
+   
 }
 
 .h2-img{
     color: rgb(212, 81, 81);
     text-align: center;
+    background-color: bisque;
 }
 .spa{
     color: rgb(52, 24, 24);
+    
+}
+
+.search-cat{
+    text-align: center;
+    
+}
+
+#image-search{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
 }

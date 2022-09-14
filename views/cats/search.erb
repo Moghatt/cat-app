@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Cati</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/profile/new">Profile</a>
+        </li>
+      </ul>
+    <form class="d-flex"  action="/sessions" method="POST">
+      <input type="hidden" name = "_method" value="delete">
+      <button>Logout</button>
+    </form>
+    </div>
+  </div>
+</nav>
+
+<section class="cat">
+        <h2 class="search-cat"><%= search_cat['name'] %></h2>
+
+           <%# <%= if current_user['id']== %> 
+        
+        <img  id="image-search" src="<%= search_cat['image_url'] %>" alt="">
+        <h2 class="h2-img"><span class="spa">gender : </span><%= search_cat['gender'] %></h2>
+        <h2 class="h2-img"><span class="spa">age : </span><%= search_cat['age'] %></h2>
+        <h3 class="h2-img"><%= search_cat['name'] %> might be your solemate</h3>
+</section>

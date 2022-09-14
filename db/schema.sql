@@ -8,9 +8,10 @@ CREATE TABLE cats (
     image_url TEXT, 
     gender TEXT,
     age TEXT,
-    user_idd INTEGER
+    
 );
 
+ALTER TABLE cats ADD COLUMN owner_id INTEGER;
 
 
 
@@ -22,3 +23,4 @@ CREATE TABLE users(
 );
 
 ALTER TABLE users ADD COLUMN password_digest TEXT;
+

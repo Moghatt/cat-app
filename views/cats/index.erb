@@ -7,14 +7,14 @@
 
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Cati</a>
+    <a class="navbar-brand" href="/">Cati</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="">Profile</a>
+          <a class="nav-link active" aria-current="page" href="/cats/profile">Profile</a>
         </li>
       </ul>
     <form class="d-flex"  action="/sessions" method="POST">
@@ -32,7 +32,7 @@
 <%# side-bar %>
 <section class="side-bar">
   <h3>Search your future solemate</h3>
-    <form >
+    <form action="/cats/search" method="GET" >
     <div class="form-floating mb-3">
       <input type="text" name="gender" class="form-control" id="floatingInput" placeholder="gender">
       <label for="floatingInput">gender</label>
@@ -41,28 +41,16 @@
       <input type="number" name="age" class="form-control" id="floatingInput" placeholder="age">
       <label for="floatingInput">age</label>
     </div>
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Search</button>
+      <button class="w-100 btn btn-lg btn-primary" >Search</button>
     </form>
     
 </section>
-    
+
 <%# biger-side %>
   <section class="cats">
     <% cats.each do |cat| %>
       <section class="cat">
-        <header>
-          <h2><%= cat['name'] %></h2>
-          <section class="controls">
-           <%# <%= if current_user['id']== %> 
-          <a href="/cats/<%= cat['id'] %>/edit">Edit</a>
-          <a href="/cats/new">Add cat</a>
-          <form action="/cats/<%= cat['id'] %>" method="POST">
-            <input type="hidden" name="_method" value="delete">
-            <button>Delete</button>
-          </form>
-          </section>
-        </header>
-        
+        <h2 class="h2-img"><span class="spa">name : </span><%= cat['name'] %></h2>
         <img src="<%= cat['image_url'] %>" alt="">
         <h2 class="h2-img"><span class="spa">gender : </span><%= cat['gender'] %></h2>
         <h2 class="h2-img"><span class="spa">age : </span><%= cat['age'] %></h2>
@@ -72,13 +60,20 @@
 </main>
 <% else %>
 
-  <main class="cover">
+
+
+  <main style="background: url(https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8OXx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=60) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;" class="cover">
     <h1>Cati</h1>
-    <p class="lead">Meet beautiful and gorgeous cats around and find your solemate</p>
+    <h2 class="lead">Meet beautiful and gorgeous cats around and find your solemate</h2>
     <p class="lead">
       <a href="/sessions/new" class="btn btn-lg btn-primary fw-bold border-white bg-red">Login</a>
       <a href="/users/new" class="btn btn-lg btn-primary fw-bold border-white bg-red" >Sign up</a>
     </p>
   </main>
+
 <% end %>
 

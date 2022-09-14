@@ -1,0 +1,22 @@
+    <a href="/cats/new">Add cat</a>
+<%# biger-side %>
+  <section class="cats">
+    <% owner_Cats.each do |cat| %>
+      <section class="cat">
+        <header>
+        
+          <section class="controls">
+          <a href="/cats/<%= cat['id'] %>/edit">Edit</a>
+          <form action="/cats/<%= cat['id'] %>" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <button>Delete</button>
+          </form>
+          </section>
+        </header>
+        
+        <h2 class="h2-img"><span class="spa">name : </span><%= cat['name'] %></h2>
+        <img src="<%= cat['image_url'] %>" alt="">
+        <h2 class="h2-img"><span class="spa">gender : </span><%= cat['gender'] %></h2>
+        <h2 class="h2-img"><span class="spa">age : </span><%= cat['age'] %></h2>
+      </section>
+    <% end %>

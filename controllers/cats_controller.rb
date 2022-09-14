@@ -2,6 +2,8 @@ require './models/cat'
 
 get '/' do
     cats = all_cat()
+    # owner_id = session['user_id']
+    # owner_cats = profile_cat(owner_id)
     erb :'cats/index', locals: {
         cats: cats
     }
@@ -16,9 +18,10 @@ end
     image_url = params['image_url']
     gender = params['gender']
     age = params['age']
-   
+    owner_id = session['user_id']
+ 
 
-    create_cat(name, image_url, gender, age)
+    create_cat(name, image_url, gender, age, owner_id)
     redirect '/'
   end
 
@@ -48,5 +51,37 @@ delete '/cats/:id' do
   
   delete_cat(id)
   redirect '/'
+end
+
+get '/cats/search' do
+  gender = params['gender']
+  age = params['age']
+
+  search_cat = search_cat(age, gender)
+  erb :'cats/search', locals: {
+    search_cat: search_cat
+  }
+
+end
+
+
+get '/cats/profile' do
+
+    owner_id = session['user_id']
+    owner_cats = profile_cat(owner_id)
+        erb :'cats/profile', locals: {
+        owner_Cats: owner_cats
+    }
+  # gender = params['gender']
+  # age = params['age']
+  # owner_id = session['user_id']
+  
+  # "hello world"
+
+  #  profile_cat=profile_cat(age, gender)
+
+  #   erb :'cats/profile', locals: {
+  #   profile_cat: profile_cat
+  # }
 end
 

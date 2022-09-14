@@ -2,8 +2,8 @@ def all_cat
   run_sql("SELECT * FROM cats ORDER BY id")
 end
 
-def create_cat(name, image_url, gender, age)
-      run_sql("INSERT INTO cats(name, image_url, gender, age) VALUES($1, $2, $3, $4)", [name, image_url, gender, age])
+def create_cat(name, image_url, gender, age, owner_id)
+      run_sql("INSERT INTO cats(name, image_url, gender, age, owner_id) VALUES($1, $2, $3, $4, $5)", [name, image_url, gender, age, owner_id])
 end
 
 def get_cat(id)
@@ -17,3 +17,11 @@ end
 def delete_cat(id)
   run_sql("DELETE FROM cats WHERE id = $1", [id])
 end
+
+def search_cat(age, gender)
+  run_sql("SELECT * FROM cats WHERE age = $1 AND gender = $2",[age, gender])[0]
+end 
+
+def profile_cat(owner_id)
+  run_sql("SELECT * FROM cats WHERE owner_id= $1",[owner_id])
+end 
