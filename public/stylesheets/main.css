@@ -134,3 +134,11 @@ body {
     width: 50%;
     margin: 0 auto;
 }
+.add-cat{
+    margin: .5rem .8rem;
+    text-align: center;
+}
+.h1-add{
+    padding: 1rem;
+    margin: 1rem;
+}
