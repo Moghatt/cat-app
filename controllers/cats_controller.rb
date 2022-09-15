@@ -36,6 +36,7 @@ get '/cats/:id/edit' do
 end
 
 put '/cats/:id' do
+    id = params['id']
     name = params['name']
     image_url = params['image_url']
     gender = params['gender']
