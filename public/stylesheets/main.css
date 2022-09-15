@@ -142,3 +142,8 @@ body {
     padding: 1rem;
     margin: 1rem;
 }
+
+.bottom-searchbar{
+    margin-top: .65rem;
+    border-top: 1px solid black;
+}

@@ -27,7 +27,7 @@
 <%# side-bar %>
 <section class="side-bar">
   <h3>Search your future solemate</h3>
-    <form action="/cats/search" method="GET" >
+    <form  action="/cats/search" method="GET">
     <div class="form-floating mb-3">
       <input type="text" name="gender" class="form-control" id="floatingInput" placeholder="gender">
       <label for="floatingInput">gender</label>
@@ -38,7 +38,7 @@
     </div>
       <button class="w-100 btn btn-lg btn-primary" >Search</button>
     </form>
-        
+ <section class="bottom-searchbar">     
 <% if search_cat %>
         <h2 class="search-cat"><%= search_cat['name'] %></h2>
         <img  id="image-search" src="<%= search_cat['image_url'] %>" alt="">
@@ -48,6 +48,7 @@
   <%else%>
         <p class ="text-muted display-5"></p>
   <%end%>
+  </section>  
 
     
 </section>
