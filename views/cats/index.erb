@@ -20,7 +20,7 @@
   </div>
 </nav>
 
-<h2 class="h2-header">Welcome to cat dating web-app <%= current_user['first_name'] %></h2>
+<h2 class="h2-header">Welcome to Cati <%= current_user['first_name'] %></h2>
 
   
 <main class="index-main">
@@ -38,6 +38,17 @@
     </div>
       <button class="w-100 btn btn-lg btn-primary" >Search</button>
     </form>
+        
+<% if search_cat %>
+        <h2 class="search-cat"><%= search_cat['name'] %></h2>
+        <img  id="image-search" src="<%= search_cat['image_url'] %>" alt="">
+        <h2 class="h2-img" style="background-color:#fff;" #cccccc;><span class="spa">gender : </span><%= search_cat['gender'] %></h2>
+        <h2 class="h2-img" style="background-color:#fff;"><span class="spa">age : </span><%= search_cat['age'] %></h2>
+        <h3 class="h2-img" style="background-color:#fff;"><%= search_cat['name'] %> might be your solemate</h3>
+  <%else%>
+        <p class ="text-muted display-5"></p>
+  <%end%>
+
     
 </section>
 
@@ -68,6 +79,8 @@
       <a href="/sessions/new" class="btn btn-lg btn-primary fw-bold border-white bg-red">Login</a>
       <a href="/users/new" class="btn btn-lg btn-primary fw-bold border-white bg-red" >Sign up</a>
     </p>
+
+
   </main>
 
 <% end %>

@@ -1,11 +1,10 @@
 require './models/cat'
 
 get '/' do
+  search_cat= nil
     cats = all_cat()
-    # owner_id = session['user_id']
-    # owner_cats = profile_cat(owner_id)
     erb :'cats/index', locals: {
-        cats: cats
+        cats: cats , search_cat: search_cat
     }
 end
 
@@ -56,10 +55,10 @@ end
 get '/cats/search' do
   gender = params['gender'].downcase
   age = params['age'].downcase
-
+  cats = all_cat()
   search_cat = search_cat(age, gender)
-  erb :'cats/search', locals: {
-    search_cat: search_cat
+  erb :'cats/index', locals: {
+    search_cat: search_cat, cats: cats
   }
 
 end
